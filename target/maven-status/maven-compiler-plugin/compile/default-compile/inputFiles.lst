@@ -1,0 +1,16 @@
+/home/giacomo/Chat/java-chat/src/main/java/com/github/yagarea/chat/client/ResponsePrinterLoop.java
+/home/giacomo/Chat/java-chat/src/main/java/com/github/yagarea/chat/server/Authenticator.java
+/home/giacomo/Chat/java-chat/src/main/java/com/github/yagarea/chat/server/Server.java
+/home/giacomo/Chat/java-chat/src/main/java/com/github/yagarea/chat/server/PasswordHolder.java
+/home/giacomo/Chat/java-chat/src/main/java/com/github/yagarea/chat/shared/security/ShaUtil.java
+/home/giacomo/Chat/java-chat/src/main/java/com/github/yagarea/chat/shared/security/RSA.java
+/home/giacomo/Chat/java-chat/src/main/java/com/github/yagarea/chat/shared/LoginResponse.java
+/home/giacomo/Chat/java-chat/src/main/java/com/github/yagarea/chat/server/FunctionsS.java
+/home/giacomo/Chat/java-chat/src/main/java/com/github/yagarea/chat/server/ClientConnectionRunnable.java
+/home/giacomo/Chat/java-chat/src/main/java/com/github/yagarea/chat/shared/UserConsoleReader.java
+/home/giacomo/Chat/java-chat/src/main/java/com/github/yagarea/chat/shared/UserSystemInReader.java
+/home/giacomo/Chat/java-chat/src/main/java/com/github/yagarea/chat/client/Client.java
+/home/giacomo/Chat/java-chat/src/main/java/com/github/yagarea/chat/server/ClientConnection.java
+/home/giacomo/Chat/java-chat/src/main/java/com/github/yagarea/chat/server/ServerConsole.java
+/home/giacomo/Chat/java-chat/src/main/java/com/github/yagarea/chat/client/FunctionsC.java
+/home/giacomo/Chat/java-chat/src/main/java/com/github/yagarea/chat/shared/UserReader.java

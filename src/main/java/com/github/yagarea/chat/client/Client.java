@@ -44,14 +44,23 @@ public class Client {
             while (true) {
                 String messageToServer = consoleReader.readLine();
                 if (!messageToServer.equals("")) {
-                    writer.println(encryptor.encryptString(messageToServer));
-                    writer.flush();
-                } else if (messageToServer.toLowerCase().startsWith(":changepassword")) {
-                    writer.println(encryptor.encryptString("changePassword: " + consoleReader.readPassword()));
+                    if (messageToServer.toLowerCase().startsWith(":changepassword")) {
+                        writer.println(encryptor.encryptString("changePassword: " + consoleReader.readPassword()));
+                    } else if (messageToServer.toLowerCase().startsWith(":quit")) {
+                        break;
+                    }else{
+                        writer.println(encryptor.encryptString(messageToServer));
+                        writer.flush();
+                    }
                 }
+                
             }
+            FunctionsC.clearScreen();
+            System.exit(0);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
+    
 }

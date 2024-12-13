@@ -25,7 +25,8 @@ public class ResponsePrinterLoop implements Runnable {
                 if (line != null) {
                     System.out.println(decryptor.decryptString(line));
                 } else {
-                    System.err.println("SERVER DISCONNECTED");
+                    System.err.println(FunctionsC.ROSSO + "SERVER DISCONNECTED" + FunctionsC.RESET);
+                    FunctionsC.clearScreen();
                     // Must by sys.exit - when only break; -ing, main Thread will continue to run
                     System.exit(0);
                 }

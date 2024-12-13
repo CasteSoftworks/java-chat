@@ -73,7 +73,7 @@ public class ClientConnection {
     }
 
     public void startListenig() {
-        broadcast("SERVER: " + username + " has joined this chatting room");
+        broadcast(FunctionsS.BLU+"SERVER: " + FunctionsS.GIALLO + username + FunctionsS.RESET + " has joined this chatting room");
         System.out.println("SERVER: " + username + " has joined this chatting room");
         try {
             while (true) {
@@ -89,11 +89,11 @@ public class ClientConnection {
                     sendClientList();
                 } else if (message.startsWith(":changePassword")) {
                     authenticator.changePassword(username, message.substring(":changePassword ".length()));
-                    sendEncrypeted("PASSWORD CHANGED");
+                    sendEncrypeted(FunctionsS.GIALLO + "PASSWORD CHANGED" + FunctionsS.RESET);
                 } else if (privateMessageMatcher.matches()) {
                     sendPrivateMessage(privateMessageMatcher);
                 } else {
-                    broadcast(username + ": " + message);
+                    broadcast(FunctionsS.MAGENTA + username + ": " + FunctionsS.RESET + message);
                 }
             }
         } catch (IOException e) {
@@ -103,7 +103,7 @@ public class ClientConnection {
 
     private void disconnect() {
         clients.remove(username);
-        broadcast(username + " has disconnected this chatting room");
+        broadcast(FunctionsS.GIALLO + username + " has disconnected this chatting room" + FunctionsS.RESET);
     }
 
     private void broadcast(String message) {
@@ -137,9 +137,9 @@ public class ClientConnection {
         String to = privateMessageMatcher.group(1);
         String messageText = privateMessageMatcher.group(2);
         if (clients.keySet().contains(to)) {
-            clients.get(to).sendEncrypeted("PRIVATE " + username + ": " + messageText);
+            clients.get(to).sendEncrypeted(FunctionsS.CIANO + "PRIVATE " + FunctionsS.MAGENTA +username + ": " + FunctionsS.RESET + messageText);
         } else {
-            sendEncrypeted("SERVER: WRONG NICKNAME");
+            sendEncrypeted(FunctionsS.ROSSO + "SERVER: WRONG NICKNAME" + FunctionsS.RESET);
         }
     }
 
