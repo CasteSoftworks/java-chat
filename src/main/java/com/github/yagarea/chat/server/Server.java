@@ -1,12 +1,13 @@
 package com.github.yagarea.chat.server;
 
 import com.github.yagarea.chat.shared.security.RSA;
+import com.github.yagarea.chat.shared.SharedFunctions;
 
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentHashMap; 
 
 /**
  * The main server class that listens for incoming client connections, initializes
@@ -39,6 +40,7 @@ public class Server {
         Authenticator auth = new Authenticator(args[0]);
 
         new Thread(new ServerConsole(clients)).start();
+        SharedFunctions.screenColours();
 
         while (chatServer != null) {
             try {

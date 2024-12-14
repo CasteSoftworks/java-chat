@@ -8,15 +8,15 @@ public class SharedFunctions {
     /**
      * Collection of console escape codes for colours
      */
-    public static final String RESET = "\u001B[0m";
-    public static final String NERO = "\u001B[30m";
-    public static final String ROSSO = "\u001B[31m";
-    public static final String VERDE = "\u001B[32m";
-    public static final String GIALLO = "\u001B[33m";
-    public static final String BLU = "\u001B[34m";
-    public static final String MAGENTA = "\u001B[35m";
-    public static final String CIANO = "\u001B[36m";
-    public static final String BIANCO = "\u001B[37m";
+    public static String RESET = "\u001B[0m";
+    public static String NERO = "\u001B[30m";
+    public static String ROSSO = "\u001B[31m";
+    public static String VERDE = "\u001B[32m";
+    public static String GIALLO = "\u001B[33m";
+    public static String BLU = "\u001B[34m";
+    public static String MAGENTA = "\u001B[35m";
+    public static String CIANO = "\u001B[36m";
+    public static String BIANCO = "\u001B[37m";
 
     /**
      * Clears the console screen. The method works by executing system-specific commands
@@ -36,6 +36,32 @@ public class SharedFunctions {
             }
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    public static void screenColours() {
+        if (System.getProperty("os.name").contains("Windows")) {
+            // Abilita i codici di escape ANSI su Windows 10 (versione 1511 o successiva)
+            try {
+                String osVersion = System.getProperty("os.version");
+                if (osVersion != null && osVersion.startsWith("10")) {
+                    // Attiva i colori ANSI se supportati
+                    ProcessBuilder processBuilder = new ProcessBuilder("cmd", "/c", "REG ADD \"HKCU\\Console\" /v VirtualTerminalLevel /t REG_DWORD /d 1 /f");
+                    processBuilder.inheritIO().start();
+                }else{
+                    RESET = "";
+                    NERO = "";
+                    ROSSO = "";
+                    VERDE = "";
+                    GIALLO = "";
+                    BLU = "";
+                    MAGENTA = "";
+                    CIANO = "";
+                    BIANCO = "";
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 }
