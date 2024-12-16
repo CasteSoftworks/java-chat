@@ -12,6 +12,7 @@ Original version:
 - Communication between server and client is encrypted by RSA.
 - Passwords are saved as SHA hashes.
 - Password are hashed with randomized salt
+
 This fork:
 - Clears the client's terminal on disconnection
 
@@ -61,6 +62,7 @@ Original version:
 - `kick` _(nickname of the user to be kicked)_ - kick specific connected client
 - `broadcast` _(message)_ - send message to all connected clients
 - `help` - print list of server console commands
+
 This fork:
 - `kill` - kicks all the connected clients, deletes the `authenticationFile` and closes the server
 - `shutdown` - a nicer way than `Ctrl+C` to close the server
