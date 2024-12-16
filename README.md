@@ -87,6 +87,7 @@ Original version:
 - `:clients` - prints list of connected clients
 - `@nickname` - send private message only to tagged user
 - `:quit` - disconnects the client
+
 This fork:
-- a working `changepassword` - changes teh client's password
+- a working `changepassword` - changes the client's password
 
